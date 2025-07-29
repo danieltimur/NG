@@ -3,29 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOL</title>
+    <title>Das Ende des Internets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: black;
+            background: linear-gradient(135deg, #111 0%, #222 100%);
+            min-height: 100vh;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
         }
-        
-        .centered-text {
-            color: red;
+
+        .centered-card {
+            background: rgba(30, 30, 30, 0.95);
+            box-shadow: 0 10px 32px rgba(0,0,0,0.45), 0 1.5px 6px rgba(255,0,0,0.12);
+            border-radius: 20px;
+            padding: 40px 34px 28px 34px;
             text-align: center;
-            font-size: 24px;
+            max-width: 380px;
+            width: 90vw;
+        }
+
+        .centered-card h1 {
+            color: #ff3c3c;
+            font-size: 2.1rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .centered-card p {
+            color: #fff;
+            font-size: 1.15rem;
+            margin-bottom: 28px;
+        }
+
+        .centered-card a {
+            text-decoration: none;
+        }
+
+        .centered-card button {
+            background: linear-gradient(90deg, #ff2121 0%, #ff5252 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 38px;
+            cursor: pointer;
+            transition: background 0.19s, transform 0.13s;
+            box-shadow: 0 2px 12px rgba(255, 60, 60, 0.16);
+        }
+
+        .centered-card button:hover {
+            background: linear-gradient(90deg, #ff5252 0%, #ff2121 100%);
+            transform: scale(1.06);
+        }
+
+        .footer {
+            margin-top: 38px;
+            color: #c9c9c9;
+            font-size: 0.92rem;
+            opacity: 0.8;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 480px) {
+            .centered-card {
+                padding: 26px 10px 18px 10px;
+            }
+            .centered-card h1 {
+                font-size: 1.4rem;
+            }
+            .centered-card p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="centered-text">
-        <p>Das Ende des Internets. Möchtest du fortfahren? <br>
-<a href="lol.html"> <button>Ja</button> </a></p>
-        <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br> <h6>von: Daniel :)</h6>
+    <div class="centered-card">
+        <h1>Das Ende des Internets</h1>
+        <p>Möchtest du fortfahren?</p>
+        <a href="lol.html"><button>Ja</button></a>
+        <div class="footer">von: Daniel :)</div>
     </div>
 </body>
 </html>
