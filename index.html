@@ -21,8 +21,9 @@
       border-radius: 24px;
       box-shadow: 0 6px 32px rgba(251,191,36,0.10), 0 1.5px 6px rgba(251,191,36,0.04);
       text-align: center;
-      max-width: 400px;
-      width: 1000%;
+      max-width: 480px;
+      width: 100%;
+      transition: box-shadow 0.2s;
     }
     h1 {
       color: #f59e42;
@@ -31,13 +32,11 @@
       font-weight: 700;
       letter-spacing: 0.02em;
     }
-    p {
-      font-size: 1.1rem;
+    .warning-message {
+      font-size: 1.25rem;
       color: #6b4f1d;
       margin-bottom: 2rem;
-    }
-    a {
-      text-decoration: none;
+      font-weight: bold;
     }
     button {
       background: linear-gradient(90deg, #f59e42 60%, #fbbf24 100%);
@@ -55,6 +54,14 @@
       background: linear-gradient(90deg, #fbbf24 60%, #f59e42 100%);
       transform: translateY(-2px) scale(1.04);
     }
+    .video-wrapper {
+      display: none;
+      transition: opacity 0.4s;
+    }
+    .video-wrapper.active {
+      display: block;
+      opacity: 1;
+    }
     @media (max-width: 500px) {
       .container {
         padding: 1.2rem 0.5rem 1rem 0.5rem;
@@ -64,11 +71,29 @@
         font-size: 1.2rem;
       }
     }
+    iframe {
+      max-width: 100%;
+      border-radius: 18px;
+      border: none;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1><iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=pQyPOkKPP2uQfAJd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></h1><br>
+    <div class="warning-message" id="warn">
+      Sicher?? NoICh?!
+      <br><br>
+      <button onclick="showVideo()">Ja!</button>
+    </div>
+    <div class="video-wrapper" id="videoBox">
+      <iframe width="400" height="225" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=pQyPOkKPP2uQfAJd" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
+  <script>
+    function showVideo() {
+      document.getElementById('warn').style.display = 'none';
+      document.getElementById('videoBox').classList.add('active');
+    }
+  </script>
 </body>
 </html>
